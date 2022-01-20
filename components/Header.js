@@ -1,9 +1,17 @@
 import Image from "next/image";
-import { SearchIcon } from "@heroicons/react/outline";
+import {
+  SearchIcon,
+  PlusCircleIcon,
+  UserGroupIcon,
+  HeartIcon,
+  PaperAirplaneIcon,
+  MenuIcon,
+} from "@heroicons/react/outline";
+import { HomeIcon } from "@heroicons/react/solid";
 
 export default function Header() {
   return (
-    <div className="flex items-center justify-between max-w-6xl">
+    <div className="flex items-center justify-between max-w-6xl mx-5 xl:mx-auto">
       {/* Left */}
       <div className="cursor-pointer h-24 w-24 relative hidden lg:inline-grid">
         <Image
@@ -31,8 +39,19 @@ export default function Header() {
         />
       </div>
       {/* Right */}
-
-      <h1>Hello world!</h1>
+      <div className="flex items-center space-x-4 ">
+        <HomeIcon className="navBtn" />
+        <PaperAirplaneIcon className="navBtn rotate-45" />
+        <PlusCircleIcon className="navBtn" />
+        <PlusCircleIcon className="h-6 md:hidden" />
+        <UserGroupIcon className="navBtn " />
+        <HeartIcon className="navBtn " />
+        <img
+          className="h-10 rounded-full cursor-pointer"
+          src="https://static.skillshare.com/uploads/users/350301760/user-image-large.jpg?753816048"
+          alt="user-image"
+        />
+      </div>
     </div>
   );
 }
