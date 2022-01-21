@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Feed from "../components/Feed";
 import Header from "../components/Header";
 
 export default function Home() {
@@ -12,9 +13,9 @@ export default function Home() {
       {/* Header */}
       <Header />
       {/* Feed */}
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam explicabo vitae at incidunt eos nostrum voluptatem distinctio quibusdam beatae, vel nobis atque. Eligendi dignissimos consequatur perferendis natus delectus recusandae repellendus laboriosam rem, cum molestiae? Exercitationem quidem fugit rerum veniam quas officia, dolores dolore officiis necessitatibus, aspernatur corporis autem incidunt excepturi illum repudiandae sint, ipsum id velit. Alias cumque repellat perferendis nobis non quis, maiores dolore. Laboriosam modi cumque rem adipisci architecto nisi repellendus magni ipsam perspiciatis, doloribus soluta harum sint officiis? Vitae maxime odio, laudantium dolore doloremque asperiores ipsum dignissimos adipisci repellat excepturi ipsa maiores, perspiciatis consequuntur explicabo blanditiis vero temporibus vel quasi natus possimus animi illo. Illo iusto illum, dolorem est error saepe ex facilis tenetur sapiente maxime atque adipisci exercitationem veritatis cum, ipsum vel laboriosam tempora quia laudantium. Non mollitia ab corrupti repellat natus debitis ipsam laborum sunt ipsa cupiditate labore nihil incidunt, repudiandae at commodi officiis amet quasi libero ex sit dolorem provident consectetur distinctio magni! Doloribus culpa quia ut. Fugit neque pariatur, dolorum animi, praesentium autem in vel dolor quidem fugiat harum accusamus sunt ipsam tenetur ipsum quae ab quo debitis. Rerum molestias pariatur fuga porro recusandae illum velit consectetur, voluptas sequi, officia laboriosam laudantium voluptates!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam explicabo vitae at incidunt eos nostrum voluptatem distinctio quibusdam beatae, vel nobis atque. Eligendi dignissimos consequatur perferendis natus delectus recusandae repellendus laboriosam rem, cum molestiae? Exercitationem quidem fugit rerum veniam quas officia, dolores dolore officiis necessitatibus, aspernatur corporis autem incidunt excepturi illum repudiandae sint, ipsum id velit. Alias cumque repellat perferendis nobis non quis, maiores dolore. Laboriosam modi cumque rem adipisci architecto nisi repellendus magni ipsam perspiciatis, doloribus soluta harum sint officiis? Vitae maxime odio, laudantium dolore doloremque asperiores ipsum dignissimos adipisci repellat excepturi ipsa maiores, perspiciatis consequuntur explicabo blanditiis vero temporibus vel quasi natus possimus animi illo. Illo iusto illum, dolorem est error saepe ex facilis tenetur sapiente maxime atque adipisci exercitationem veritatis cum, ipsum vel laboriosam tempora quia laudantium. Non mollitia ab corrupti repellat natus debitis ipsam laborum sunt ipsa cupiditate labore nihil incidunt, repudiandae at commodi officiis amet quasi libero ex sit dolorem provident consectetur distinctio magni! Doloribus culpa quia ut. Fugit neque pariatur, dolorum animi, praesentium autem in vel dolor quidem fugiat harum accusamus sunt ipsam tenetur ipsum quae ab quo debitis. Rerum molestias pariatur fuga porro recusandae illum velit consectetur, voluptas sequi, officia laboriosam laudantium voluptates!</p>
+      <Feed/>
       {/* Modal */}
+
     </div>
   );
 }
