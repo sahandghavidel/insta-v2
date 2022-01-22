@@ -1,36 +1,47 @@
 import {
-  BookmarkIcon,
-  ChatIcon,
-  DotsHorizontalIcon,
-  EmojiHappyIcon,
-  HeartIcon,
-  PaperAirplaneIcon,
-} from "@heroicons/react/outline";
-import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
-export default function Post({ username, userImg, img, caption }) {
-  return (
-    <div className="bg-white my-7 border rounded-sm">
-      {/* Header */}
-      <div className="flex items-center p-5">
+    BookmarkIcon,
+    ChatIcon,
+    DotsHorizontalIcon,
+    EmojiHappyIcon,
+    HeartIcon,
+    PaperAirplaneIcon,
+  } from "@heroicons/react/outline";
+  import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
+  export default function Post({ id, username, userImg, img, caption }) {
+    return (
+      <div className="bg-white my-7 border rounded-sm">
+        {/* Header */}
+        <div className="flex items-center p-5">
+          <img
+            className="rounded-full h-12 object-cover border p-1 mr-3"
+            src={userImg}
+            alt={"Image of " + username}
+          />
+          <p className="flex-1 font-bold">{username}</p>
+          <DotsHorizontalIcon className="h-5" />
+        </div>
+  
+        {/* img */}
+  
         <img
-          className="rounded-full h-12 object-cover border p-1 mr-3"
-          src={userImg}
-          alt={"Image of " + username}
+          className="object-cover w-full"
+          src={img}
+          alt={`Image with id ${id} posted by ${username}`}
         />
-        <p className="flex-1 font-bold">{username}</p>
-        <DotsHorizontalIcon className="h-5" />
+  
+        {/* Buttons */}
+        <div className="flex justify-between px-4 pt-4">
+          <div className="flex space-x-4">
+            <HeartIcon className="btn" />
+            <ChatIcon className="btn" />
+            <PaperAirplaneIcon className="btn" />
+          </div>
+          <BookmarkIcon className="btn" />
+        </div>
+  
+        {/* comments */}
+  
+        {/* input box */}
       </div>
-
-      {/* img */}
-
-      <img className="object-cover w-full" src={img} alt="" />
-      {/* later change ti Image after connecting to database */}
-
-      {/* Buttons */}
-
-      {/* comments */}
-
-      {/* input box */}
-    </div>
-  );
-}
+    );
+  }
