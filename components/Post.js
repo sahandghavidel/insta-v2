@@ -23,6 +23,9 @@ export default function Post({ username, userImg, img, caption }) {
 
       {/* img */}
 
+      <img className="object-cover w-full" src={img} alt="" />
+      {/* later change ti Image after connecting to database */}
+
       {/* Buttons */}
 
       {/* comments */}
