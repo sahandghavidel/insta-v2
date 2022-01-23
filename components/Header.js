@@ -8,8 +8,10 @@ import {
   MenuIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function Header() {
+  const { data: session } = useSession();
   return (
     <div className="shadow-sm border-b sticky top-0 bg-white">
       <div className="flex items-center justify-between max-w-6xl mx-5 xl:mx-auto">
@@ -42,16 +44,22 @@ export default function Header() {
         {/* Right */}
         <div className="flex items-center space-x-4 ">
           <HomeIcon className="navBtn" />
-          <PaperAirplaneIcon className="navBtn rotate-45" />
-          <PlusCircleIcon className="navBtn" />
-          <PlusCircleIcon className="h-6 md:hidden" />
-          <UserGroupIcon className="navBtn " />
-          <HeartIcon className="navBtn " />
-          <img
-            className="h-10 rounded-full cursor-pointer"
-            src="https://static.skillshare.com/uploads/users/350301760/user-image-large.jpg?753816048"
-            alt="user-image"
-          />
+          {session ? (
+            <>
+              <PaperAirplaneIcon className="navBtn rotate-45" />
+              <PlusCircleIcon className="navBtn" />
+              <PlusCircleIcon className="h-6 md:hidden" />
+              <UserGroupIcon className="navBtn " />
+              <HeartIcon className="navBtn " />
+              <img
+                className="h-10 rounded-full cursor-pointer"
+                src="https://static.skillshare.com/uploads/users/350301760/user-image-large.jpg?753816048"
+                alt="user-image"
+              />
+            </>
+          ) : (
+            <button onClick={signIn}>sign in</button>
+          )}
         </div>
       </div>
     </div>
