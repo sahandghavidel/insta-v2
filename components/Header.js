@@ -9,9 +9,13 @@ import {
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom";
 export default function Header() {
   const { data: session } = useSession();
+  const router = useRouter();
+  const [open, setOpen] = useRecoilState(modalState);
   return (
     <div className="shadow-sm border-b sticky top-0 bg-white">
       <div className="flex items-center justify-between max-w-6xl mx-5 xl:mx-auto">
@@ -21,6 +25,7 @@ export default function Header() {
             src="http://www.jennexplores.com/wp-content/uploads/2015/09/Instagram_logo_black.png"
             layout="fill"
             className="object-contain"
+            onClick={() => router.push("/")}
           />
         </div>
         <div className="cursor-pointer h-24 w-10 relative inline-grid lg:hidden">
@@ -28,6 +33,7 @@ export default function Header() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/769px-Instagram-Icon.png"
             layout="fill"
             className="object-contain"
+            onClick={() => router.push("/")}
           />
         </div>
         {/* Middle */}
@@ -43,12 +49,18 @@ export default function Header() {
         </div>
         {/* Right */}
         <div className="flex items-center space-x-4 ">
-          <HomeIcon className="navBtn" />
+          <HomeIcon className="navBtn" onClick={() => router.push("/")} />
           {session ? (
             <>
               <PaperAirplaneIcon className="navBtn rotate-45" />
-              <PlusCircleIcon className="navBtn" />
-              <PlusCircleIcon className="h-6 md:hidden" />
+              <PlusCircleIcon
+                className="navBtn"
+                onClick={() => setOpen(true)}
+              />
+              <PlusCircleIcon
+                className="h-6 md:hidden"
+                onClick={() => setOpen(true)}
+              />
               <UserGroupIcon className="navBtn " />
               <HeartIcon className="navBtn " />
               <img
