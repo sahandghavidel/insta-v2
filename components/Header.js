@@ -53,8 +53,9 @@ export default function Header() {
               <HeartIcon className="navBtn " />
               <img
                 className="h-10 rounded-full cursor-pointer"
-                src="https://static.skillshare.com/uploads/users/350301760/user-image-large.jpg?753816048"
+                src={session.user.image}
                 alt="user-image"
+                onClick={signOut}
               />
             </>
           ) : (

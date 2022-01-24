@@ -32,7 +32,7 @@ export default function Suggestions() {
           />
           <div className="flex-1 ml-4">
             <h2 className="font-semibold text-sm">{profile.username}</h2>
-            <h3 className="text-sm text-gray-400 truncate w-[230px]">
+            <h3 className="text-sm text-gray-400 truncate w-[250px]">
               {profile.jobTitle}
             </h3>
           </div>
