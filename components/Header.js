@@ -17,7 +17,7 @@ export default function Header() {
   const router = useRouter();
   const [open, setOpen] = useRecoilState(modalState);
   return (
-    <div className="shadow-sm border-b sticky top-0 bg-white">
+    <div className="shadow-sm border-b sticky top-0 bg-white z-50">
       <div className="flex items-center justify-between max-w-6xl mx-5 xl:mx-auto">
         {/* Left */}
         <div className="cursor-pointer h-24 w-24 relative hidden lg:inline-grid">

@@ -17,11 +17,11 @@ const firebaseConfig = {
 
   projectId: "insta-v2-22a16",
 
-  storageBucket: "insta-v2-22a16.appspot.com",
+  storageBucket: "insta-v1-6ed84.appspot.com",
 
   messagingSenderId: "820198712987",
 
-  appId: "1:820198712987:web:e02cc27eae7f6669a7883e",
+  appId: "1:820198712987:web:5b7d519944d432a1a7883e",
 };
 
 // Initialize Firebase
