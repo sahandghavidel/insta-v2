@@ -8,8 +8,24 @@ import {
 } from "@heroicons/react/outline";
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
 import { useSession } from "next-auth/react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useState } from "react";
+import { db } from "../firebase";
 export default function Post({ id, username, userImg, img, caption }) {
   const { data: session } = useSession();
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
+  async function sendComment(e) {
+    e.preventDefault();
+    const commentToSend = comment;
+    setComment("");
+    await addDoc(collection(db, "posts", id, "comments"), {
+      comment: commentToSend,
+      username: session.user.username,
+      userImage: session.user.image,
+      timestamp: serverTimestamp(),
+    });
+  }
   return (
     <div className="bg-white my-7 border rounded-sm">
       {/* Header */}
@@ -54,12 +70,20 @@ export default function Post({ id, username, userImg, img, caption }) {
         <form className="flex items-center p-4">
           <EmojiHappyIcon className="h-7" />
           <input
-            placeholder="Enter you comment.."
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
             type="text"
             className="border-none flex-1 focus:ring-0"
+            placeholder="Enter your comment..."
           />
-
-          <button className="font-semibold text-blue-400">Post</button>
+          <button
+            disabled={!comment.trim()}
+            onClick={sendComment}
+            type="submit"
+            className="font-semibold text-blue-400"
+          >
+            Post
+          </button>
         </form>
       )}
     </div>
