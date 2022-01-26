@@ -89,13 +89,14 @@ export default function Post({ id, username, userImg, img, caption }) {
       </p>
 
       {comments.length > 0 && (
-        <div className="mx-10 max-h-20 scrollbar-none  overflow-y-scroll ">
+        <div className="mx-10 max-h-24 scrollbar-none  overflow-y-scroll ">
           {comments.map((comment) => (
-            <div key={comment.id} className="flex items-center space-x-2 mb-2">
+            <div key={comment.id} className="flex items-center space-x-2 mb-3">
               <img
                 className="h-7 rounded-full object-cover"
                 src={comment.data().userImage}
               />
+              <p className="font-bold">{comment.data().username}</p>
               <p className="flex-1 truncate">{comment.data().comment}</p>
               <Moment fromNow>{comment.data().timestamp?.toDate()}</Moment>
             </div>
