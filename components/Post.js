@@ -4,7 +4,6 @@ import {
   DotsHorizontalIcon,
   EmojiHappyIcon,
   HeartIcon,
-  PaperAirplaneIcon,
 } from "@heroicons/react/outline";
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
 import { useSession } from "next-auth/react";
@@ -114,7 +113,6 @@ export default function Post({ id, username, userImg, img, caption }) {
             )}
 
             <ChatIcon className="btn" />
-            <PaperAirplaneIcon className="btn" />
           </div>
           <BookmarkIcon className="btn" />
         </div>

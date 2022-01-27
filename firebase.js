@@ -11,17 +11,17 @@ import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCAXUas0KMiHpouKVJGtAdIaAR5gxz8Hy8",
+  apiKey: "AIzaSyBirxJnooXD1WsJBuPn3zEa3oj-Pu9zeEM",
 
-  authDomain: "insta-v2-22a16.firebaseapp.com",
+  authDomain: "insta-v1-6ed84.firebaseapp.com",
 
-  projectId: "insta-v2-22a16",
+  projectId: "insta-v1-6ed84",
 
   storageBucket: "insta-v1-6ed84.appspot.com",
 
-  messagingSenderId: "820198712987",
+  messagingSenderId: "154975437062",
 
-  appId: "1:820198712987:web:5b7d519944d432a1a7883e",
+  appId: "1:154975437062:web:005222265cd9c858dede87",
 };
 
 // Initialize Firebase

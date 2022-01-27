@@ -1,12 +1,5 @@
 import Image from "next/image";
-import {
-  SearchIcon,
-  PlusCircleIcon,
-  UserGroupIcon,
-  HeartIcon,
-  PaperAirplaneIcon,
-  MenuIcon,
-} from "@heroicons/react/outline";
+import { SearchIcon, PlusCircleIcon } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
@@ -52,7 +45,6 @@ export default function Header() {
           <HomeIcon className="navBtn" onClick={() => router.push("/")} />
           {session ? (
             <>
-              <PaperAirplaneIcon className="navBtn rotate-45" />
               <PlusCircleIcon
                 className="navBtn"
                 onClick={() => setOpen(true)}
@@ -61,8 +53,6 @@ export default function Header() {
                 className="h-6 md:hidden"
                 onClick={() => setOpen(true)}
               />
-              <UserGroupIcon className="navBtn " />
-              <HeartIcon className="navBtn " />
               <img
                 className="h-10 rounded-full cursor-pointer"
                 src={session.user.image}
