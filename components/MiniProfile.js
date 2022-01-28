@@ -14,7 +14,7 @@ export default function MiniProfile() {
         <h3 className="text-sm text-gray-400 ">Welcome to Instageram</h3>
       </div>
       <button onClick={signOut} className="font-semibold text-blue-400 text-sm">
-        Sing out
+        Sign out
       </button>
     </div>
   );
